@@ -193,6 +193,8 @@
   <parent link="body_link_1"/>
   <child link="finger1_inner_knuckle_link_1"/>
   <axis xyz="0.0 -0.0 -1.0"/>
+  <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+  <mimic joint="finger1_joint" multiplier="1"/>
 </joint>
 
 <joint name="passive_finger1_tip_joint" type="continuous">
@@ -200,6 +202,8 @@
   <parent link="finger1_link_1"/>
   <child link="finger1_tip_link_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
+  <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+  <mimic joint="finger1_joint" multiplier="-1"/>
 </joint>
 
 <joint name="passive_finger2_joint" type="continuous">
@@ -207,6 +211,8 @@
   <parent link="body_link_1"/>
   <child link="finger2_link_1"/>
   <axis xyz="-0.0 0.0 1.0"/>
+  <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+  <mimic joint="finger1_joint" multiplier="1"/>
 </joint>
 
 <joint name="passive_finger2_innner_knuckle_joint" type="continuous">
@@ -214,6 +220,8 @@
   <parent link="body_link_1"/>
   <child link="finger2_inner_knuckle_link_1"/>
   <axis xyz="-0.0 0.0 1.0"/>
+  <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+  <mimic joint="passive_finger2_joint" multiplier="1"/>
 </joint>
 
 <joint name="passive_finger2_tip_joint" type="continuous">
@@ -221,6 +229,8 @@
   <parent link="finger2_link_1"/>
   <child link="finger2_tip_link_1"/>
   <axis xyz="-0.0 -0.0 1.0"/>
+  <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+  <mimic joint="passive_finger2_joint" multiplier="-1"/>
 </joint>
 
 </robot>
