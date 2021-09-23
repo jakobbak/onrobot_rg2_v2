@@ -176,63 +176,64 @@
         </link>
 
         <joint name="${prefix}_wrist_joint" type="revolute">
-        <origin rpy="0 0 0" xyz="0.0468 0.0 0.0"/>
-        <parent link="${prefix}_base_link"/>
-        <child link="${prefix}_body_link"/>
-        <axis xyz="0.0 -1.0 0.0"/>
-        <limit effort="100" lower="-0.785398" upper="0.785398" velocity="100"/>
+            <origin rpy="0 0 0" xyz="0.0468 0.0 0.0"/>
+            <parent link="${prefix}_base_link"/>
+            <child link="${prefix}_body_link"/>
+            <axis xyz="0.0 -1.0 0.0"/>
+            <limit effort="100" lower="-0.785398" upper="0.785398" velocity="100"/>
         </joint>
 
         <joint name="${prefix}_finger1_joint" type="revolute">
-        <origin rpy="0 0 0" xyz="0.076 -0.017 0.0"/>
-        <parent link="${prefix}_body_link"/>
-        <child link="${prefix}_finger1_link"/>
-        <axis xyz="0.0 -0.0 -1.0"/>
-        <limit effort="100" lower="0.0" upper="1.308997" velocity="100"/>
+            <origin rpy="0 0 0" xyz="0.076 -0.017 0.0"/>
+            <parent link="${prefix}_body_link"/>
+            <child link="${prefix}_finger1_link"/>
+            <axis xyz="0.0 -0.0 -1.0"/>
+            <limit effort="100" lower="0.0" upper="1.308997" velocity="100"/>
         </joint>
 
         <joint name="${prefix}_passive_finger1_inner_knuckle_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0.0925 -0.0075 0.0"/>
-        <parent link="${prefix}_body_link"/>
-        <child link="${prefix}_finger1_inner_knuckle_link"/>
-        <axis xyz="0.0 -0.0 -1.0"/>
-        <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
-        <mimic joint="${prefix}_finger1_joint" multiplier="1"/>
+            <origin rpy="0 0 0" xyz="0.0925 -0.0075 0.0"/>
+            <parent link="${prefix}_body_link"/>
+            <child link="${prefix}_finger1_inner_knuckle_link"/>
+            <axis xyz="0.0 -0.0 -1.0"/>
+            <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+            <mimic joint="${prefix}_finger1_joint" multiplier="1"/>
         </joint>
 
         <joint name="${prefix}_passive_finger1_tip_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0.055 0.0 0.0"/>
-        <parent link="${prefix}_finger1_link"/>
-        <child link="${prefix}_finger1_tip_link"/>
-        <axis xyz="-0.0 0.0 -1.0"/>
-        <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
-        <mimic joint="${prefix}_finger1_joint" multiplier="-1"/></joint>
+            <origin rpy="0 0 0" xyz="0.055 0.0 0.0"/>
+            <parent link="${prefix}_finger1_link"/>
+            <child link="${prefix}_finger1_tip_link"/>
+            <axis xyz="-0.0 0.0 -1.0"/>
+            <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+            <mimic joint="${prefix}_finger1_joint" multiplier="-1"/>
+        </joint>
 
         <joint name="${prefix}_passive_finger2_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0.076 0.017 0.0"/>
-        <parent link="${prefix}_body_link"/>
-        <child link="${prefix}_finger2_link"/>
-        <axis xyz="-0.0 0.0 1.0"/>
-        <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
-        <mimic joint="${prefix}_finger1_joint" multiplier="1"/>
+            <origin rpy="0 0 0" xyz="0.076 0.017 0.0"/>
+            <parent link="${prefix}_body_link"/>
+            <child link="${prefix}_finger2_link"/>
+            <axis xyz="-0.0 0.0 1.0"/>
+            <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+            <mimic joint="${prefix}_finger1_joint" multiplier="1"/>
         </joint>
 
         <joint name="${prefix}_passive_finger2_innner_knuckle_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0.0925 0.0075 0.0"/>
-        <parent link="${prefix}_body_link"/>
-        <child link="${prefix}_finger2_inner_knuckle_link"/>
-        <axis xyz="-0.0 0.0 1.0"/>
-        <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
-        <mimic joint="${prefix}_passive_finger2_joint" multiplier="1"/>
+            <origin rpy="0 0 0" xyz="0.0925 0.0075 0.0"/>
+            <parent link="${prefix}_body_link"/>
+            <child link="${prefix}_finger2_inner_knuckle_link"/>
+            <axis xyz="-0.0 0.0 1.0"/>
+            <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+            <mimic joint="${prefix}_passive_finger2_joint" multiplier="1"/>
         </joint>
 
         <joint name="${prefix}_passive_finger2_tip_joint" type="continuous">
-        <origin rpy="0 0 0" xyz="0.055 0.0 0.0"/>
-        <parent link="${prefix}_finger2_link"/>
-        <child link="${prefix}_finger2_tip_link"/>
-        <axis xyz="-0.0 -0.0 1.0"/>
-        <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
-        <mimic joint="${prefix}_passive_finger2_joint" multiplier="-1"/>
+            <origin rpy="0 0 0" xyz="0.055 0.0 0.0"/>
+            <parent link="${prefix}_finger2_link"/>
+            <child link="${prefix}_finger2_tip_link"/>
+            <axis xyz="-0.0 -0.0 1.0"/>
+            <limit lower="-3.14" upper="3.14" effort="0.1" velocity="100" />
+            <mimic joint="${prefix}_passive_finger2_joint" multiplier="-1"/>
         </joint>
 
         <joint name="${prefix}_base_joint" type="fixed">
