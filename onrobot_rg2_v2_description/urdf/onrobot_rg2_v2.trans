@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<robot name="onrobot_rg2_v2" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="wrist_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="wrist_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="wrist_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="finger1_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="finger1_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="finger1_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="passive_finger1_inner_knuckle_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="passive_finger1_inner_knuckle_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="passive_finger1_inner_knuckle_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="passive_finger1_tip_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="passive_finger1_tip_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="passive_finger1_tip_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="passive_finger2_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="passive_finger2_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="passive_finger2_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="passive_finger2_innner_knuckle_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="passive_finger2_innner_knuckle_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="passive_finger2_innner_knuckle_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="passive_finger2_tip_joint_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="passive_finger2_tip_joint">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="passive_finger2_tip_joint_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
