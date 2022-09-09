@@ -1,9 +1,0 @@
-<launch>
-
-<rosparam file="$(find onrobot_rg2_v2_description)/launch/controller.yaml" command="load"/>
-<node args="wrist_joint_position_controller finger1_joint_position_controller passive_finger1_inner_knuckle_joint_position_controller passive_finger1_tip_joint_position_controller passive_finger2_joint_position_controller passive_finger2_innner_knuckle_joint_position_controller passive_finger2_tip_joint_position_controller joint_state_controller " name="controller_spawner" ns="onrobot_rg2_v2" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
-<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
-  <remap from="/joint_states" to="/onrobot_rg2_v2/joint_states"/>
-</node>
-
-</launch>
