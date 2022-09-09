@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: onrobot_rg2_v2_description
+    relative_path: urdf/rg2_v2.urdf.xacro
+  srdf:
+    relative_path: config/rg2_v2.srdf
+  package_settings:
+    author_name: Jakob Bak
+    author_email: jakob@polarworks.no
+    generated_timestamp: 1662721569
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

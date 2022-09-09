@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot name="rg2_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+   <!-- specify arguments needed for the include below -->
+   <xacro:arg name="prefix" default="" />
+   <xacro:arg name="parent" default="world" />
+
+   <!-- create link fixed to the "world" -->
+   <link name="world" />
+
+   <!-- load the file containing the xacro macro for our gripper -->
+   <xacro:include filename="$(find onrobot_rg2_v2_description)/urdf/rg2_v2_macro.xacro" />
+
+   <!-- attach the end-effector model to `flange` which is within the MoveIt frame of reference -->
+   <xacro:rg2_v2 prefix="$(arg prefix)rg2_v2" parent="$(arg prefix)$(arg parent)">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+   </xacro:rg2_v2>   
+</robot>

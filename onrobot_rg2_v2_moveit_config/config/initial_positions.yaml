@@ -1,0 +1,5 @@
+# Default initial positions for rg2_v2's ros2_control fake system
+
+initial_positions:
+  rg2_v2_finger1_joint: 0
+  rg2_v2_wrist_joint: 0
