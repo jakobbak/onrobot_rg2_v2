@@ -1,8 +1,0 @@
-controller_list:
-  - name: fake_gripper_controller
-    joints:
-      - wrist_joint
-      - finger1_joint
-initial:  # Define initial robot poses.
-  - group: gripper
-    pose: closed
