@@ -1,0 +1,13 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - end-effector_controller
+
+  end-effector_controller:
+    type: FollowJointTrajectory
+    joints:
+      - rg2_v2_wrist_joint
+      - rg2_v2_finger1_joint
