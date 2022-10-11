@@ -23,55 +23,55 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 )
 
 # # COMPILE
-add_library(
-  ${PROJECT_NAME}
-  SHARED
-  src/crc.cpp
-  src/hardware_interface.cpp
-  src/robotiq_gripper_interface.cpp
-)
-target_include_directories(
-  ${PROJECT_NAME}
-  PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-)
-ament_target_dependencies(
-  ${PROJECT_NAME}
-  ${THIS_PACKAGE_INCLUDE_DEPENDS}
-)
+# add_library(
+#   ${PROJECT_NAME}
+#   SHARED
+#   src/crc.cpp
+#   src/hardware_interface.cpp
+#   src/onrobot_rg2_v2_gripper_interface.cpp
+# )
+# target_include_directories(
+#   ${PROJECT_NAME}
+#   PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>
+# )
+# ament_target_dependencies(
+#   ${PROJECT_NAME}
+#   ${THIS_PACKAGE_INCLUDE_DEPENDS}
+# )
 
-pluginlib_export_plugin_description_file(hardware_interface hardware_interface_plugin.xml)
+# pluginlib_export_plugin_description_file(hardware_interface hardware_interface_plugin.xml)
 
-add_executable(gripper_interface_test src/gripper_interface_test.cpp)
-target_include_directories(gripper_interface_test PRIVATE include)
-ament_target_dependencies(gripper_interface_test serial)
-target_link_libraries(gripper_interface_test ${PROJECT_NAME})
+# add_executable(gripper_interface_test src/gripper_interface_test.cpp)
+# target_include_directories(gripper_interface_test PRIVATE include)
+# ament_target_dependencies(gripper_interface_test serial)
+# target_link_libraries(gripper_interface_test ${PROJECT_NAME})
 
 # # INSTALL
-install(
-  TARGETS ${PROJECT_NAME}
-  EXPORT export_${PROJECT_NAME}
-  ARCHIVE DESTINATION lib/${PROJECT_NAME}
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-install(
-  TARGETS gripper_interface_test
-  DESTINATION lib/${PROJECT_NAME}
-)
+# install(
+#   TARGETS ${PROJECT_NAME}
+#   EXPORT export_${PROJECT_NAME}
+#   ARCHIVE DESTINATION lib/${PROJECT_NAME}
+#   LIBRARY DESTINATION lib
+#   RUNTIME DESTINATION bin
+# )
+# install(
+#   TARGETS gripper_interface_test
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 install(
   DIRECTORY include/
   DESTINATION include
 )
-install(
-  DIRECTORY config
-  DESTINATION share/${PROJECT_NAME}
-)
-install(
-  DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}
-)
+# install(
+#   DIRECTORY config
+#   DESTINATION share/${PROJECT_NAME}
+# )
+# install(
+#   DIRECTORY launch
+#   DESTINATION share/${PROJECT_NAME}
+# )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -89,12 +89,12 @@ endif()
 ament_export_include_directories(
   include
 )
-ament_export_libraries(
-  ${PROJECT_NAME}
-)
-ament_export_targets(
-  export_${PROJECT_NAME}
-)
+# ament_export_libraries(
+#   ${PROJECT_NAME}
+# )
+# ament_export_targets(
+#   export_${PROJECT_NAME}
+# )
 ament_export_dependencies(
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
