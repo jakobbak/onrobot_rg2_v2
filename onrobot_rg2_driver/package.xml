@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>onrobot_rg2_v2_driver</name>
+  <name>onrobot_rg2_driver</name>
   <version>0.0.0</version>
-  <description>Driver for OnRobot RG2 v2 gripper</description>
+  <description>Driver for OnRobot RG2 gripper</description>
   <maintainer email="jakob@polarworks.no">Jakob Bak</maintainer>
   <license>BSD</license>
 

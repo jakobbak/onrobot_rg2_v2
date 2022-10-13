@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(onrobot_rg2_v2_driver)
+project(onrobot_rg2_driver)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -28,7 +28,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 #   SHARED
 #   src/crc.cpp
 #   src/hardware_interface.cpp
-#   src/onrobot_rg2_v2_gripper_interface.cpp
+#   src/gripper_interface.cpp
 # )
 # target_include_directories(
 #   ${PROJECT_NAME}
