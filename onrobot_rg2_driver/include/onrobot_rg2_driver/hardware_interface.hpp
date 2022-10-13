@@ -29,6 +29,8 @@
 #ifndef ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 #define ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 
+#include "rclcpp/macros.hpp"
+
 #include "hardware_interface/actuator_interface.hpp"
 #include "onrobot_rg2_driver/visibility_control.h"
 
@@ -36,6 +38,61 @@ namespace onrobot_rg2_driver
 {
 class OnRobotRG2GripperHardwareInterface : public hardware_interface::ActuatorInterface
 {
+
+  // copied and modified from https://github.com/PickNikRobotics/ros2_robotiq_gripper/blob/b9483bbf354fc5b5d209abc092cb2fa6e03b2426/robotiq_driver/include/robotiq_driver/hardware_interface.hpp
+  // additionally compared to https://control.ros.org/master/doc/ros2_control/hardware_interface/doc/writing_new_hardware_interface.html visited on 2022-10-13
+  // any possible extra member definitions (compared to the robotiq_driver header file) are
+  // based on instructions in the above link - especially the phrase:
+  //    5. Add a constructor without parameters and the following public methods implementing 
+  //        LifecycleNodeInterface: 
+  //            on_configure, 
+  //            on_cleanup, 
+  //            on_shutdown, 
+  //            on_activate, 
+  //            on_deactivate, 
+  //            on_error; 
+  //    and overriding [definition of]
+  //        $InterfaceType$Interface: 
+  //            on_init, 
+  //            export_state_interfaces, 
+  //            export_command_interfaces, 
+  //            prepare_command_mode_switch (optional), 
+  //            perform_command_mode_switch (optional), 
+  //            read, 
+  //            write.
+  //        [where $InterfaceType$ can be 'Actuator', 'Sensor' or 'System' depending on the type of hardware you are using]
+  // at time of writing it looks like the 'robotiq_driver' header file only implemented 
+  // the non-optional virtual member functions of `hardware_interface::ActuatorInterface` 
+  // plus an override of its `on_init()`. 
+  // From `rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface` they only implement
+  // `on_activate` and `on_deactivate`. According to https://docs.ros2.org/latest/api/rclcpp_lifecycle/classrclcpp__lifecycle_1_1node__interfaces_1_1LifecycleNodeInterface.html (visited 2022-10-13)
+  // all of the lifecycle `LifecycleNodeInterface` member functions are optional.
+public:
+  RCLCPP_SHARED_PTR_DEFINITIONS(OnRobotRG2GripperHardwareInterface)
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  OnRobotRG2GripperHardwareInterface();
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  CallbackReturn on_init(const hardware_interface::HardwareInfo& info) override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  CallbackReturn on_activate(const rclcpp_lifecycle::State& previous_state) override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  CallbackReturn on_deactivate(const rclcpp_lifecycle::State& previous_state) override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  hardware_interface::return_type read(const rclcpp::Time& time, const rclcpp::Duration& period) override;
+
+  ONROBOT_RG2_DRIVER_PUBLIC
+  hardware_interface::return_type write(const rclcpp::Time& time, const rclcpp::Duration& period) override;
 
 };
 
