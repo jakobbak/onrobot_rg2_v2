@@ -31,5 +31,10 @@
 
 #include "onrobot_rg2_driver/visibility_control.h"
 
+namespace onrobot_rg2_driver
+{
+
+
+}  // namespace onrobot_rg2_driver
 
 #endif // ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
