@@ -29,11 +29,15 @@
 #ifndef ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 #define ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 
+#include "hardware_interface/actuator_interface.hpp"
 #include "onrobot_rg2_driver/visibility_control.h"
 
 namespace onrobot_rg2_driver
 {
+class OnRobotRG2GripperHardwareInterface : public hardware_interface::ActuatorInterface
+{
 
+};
 
 }  // namespace onrobot_rg2_driver
 
