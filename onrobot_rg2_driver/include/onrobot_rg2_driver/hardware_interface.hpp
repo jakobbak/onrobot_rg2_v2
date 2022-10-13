@@ -29,6 +29,7 @@
 #ifndef ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 #define ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
 
+#include "onrobot_rg2_driver/visibility_control.h"
 
 
 #endif // ONROBOT_RG2_DRIVER__HARDWARE_INTERFACE_H_
