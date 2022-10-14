@@ -33,34 +33,44 @@ namespace onrobot_rg2_driver
 
 OnRobotRG2GripperHardwareInterface::OnRobotRG2GripperHardwareInterface()
 {
+    // TODO: figure out actual implementation
 }
 
 hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_init(const hardware_interface::HardwareInfo& info)
 {
+    return hardware_interface::CallbackReturn::SUCCESS; // TODO: figure out actual implementation
 }
 
 std::vector<hardware_interface::StateInterface> OnRobotRG2GripperHardwareInterface::export_state_interfaces()
 {
+    std::vector<hardware_interface::StateInterface> state_interfaces;
+    return state_interfaces; // TODO: figure out actual implementation
 }
 
 std::vector<hardware_interface::CommandInterface> OnRobotRG2GripperHardwareInterface::export_command_interfaces()
 {
+  std::vector<hardware_interface::CommandInterface> command_interfaces;
+  return command_interfaces; // TODO: figure out actual implementation
 }
 
 hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_activate(const rclcpp_lifecycle::State& previous_state)
 {
+    return hardware_interface::CallbackReturn::SUCCESS; // TODO: figure out actual implementation
 }
 
 hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_deactivate(const rclcpp_lifecycle::State& previous_state)
 {
+    return hardware_interface::CallbackReturn::SUCCESS; // TODO: figure out actual implementation
 }
 
 hardware_interface::return_type OnRobotRG2GripperHardwareInterface::read(const rclcpp::Time& time, const rclcpp::Duration& period)
 {
+    return hardware_interface::return_type::OK; // TODO: figure out actual implementation
 }
 
 hardware_interface::return_type OnRobotRG2GripperHardwareInterface::write(const rclcpp::Time& time, const rclcpp::Duration& period)
 {
+    return hardware_interface::return_type::OK; // TODO: figure out actual implementation
 }
 
 } // namespace onrobot_rg2_driver

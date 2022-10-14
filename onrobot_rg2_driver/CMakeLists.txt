@@ -22,24 +22,24 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   serial
 )
 
-# # COMPILE
-# add_library(
-#   ${PROJECT_NAME}
-#   SHARED
-#   src/crc.cpp
-#   src/hardware_interface.cpp
-#   src/gripper_interface.cpp
-# )
-# target_include_directories(
-#   ${PROJECT_NAME}
-#   PUBLIC
-#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-#   $<INSTALL_INTERFACE:include>
-# )
-# ament_target_dependencies(
-#   ${PROJECT_NAME}
-#   ${THIS_PACKAGE_INCLUDE_DEPENDS}
-# )
+# COMPILE
+add_library(
+  ${PROJECT_NAME}
+  SHARED
+  # src/crc.cpp
+  src/hardware_interface.cpp
+  # src/gripper_interface.cpp
+)
+target_include_directories(
+  ${PROJECT_NAME}
+  PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+ament_target_dependencies(
+  ${PROJECT_NAME}
+  ${THIS_PACKAGE_INCLUDE_DEPENDS}
+)
 
 # pluginlib_export_plugin_description_file(hardware_interface hardware_interface_plugin.xml)
 
@@ -48,14 +48,14 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 # ament_target_dependencies(gripper_interface_test serial)
 # target_link_libraries(gripper_interface_test ${PROJECT_NAME})
 
-# # INSTALL
-# install(
-#   TARGETS ${PROJECT_NAME}
-#   EXPORT export_${PROJECT_NAME}
-#   ARCHIVE DESTINATION lib/${PROJECT_NAME}
-#   LIBRARY DESTINATION lib
-#   RUNTIME DESTINATION bin
-# )
+# INSTALL
+install(
+  TARGETS ${PROJECT_NAME}
+  EXPORT export_${PROJECT_NAME}
+  ARCHIVE DESTINATION lib/${PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
 # install(
 #   TARGETS gripper_interface_test
 #   DESTINATION lib/${PROJECT_NAME}
@@ -89,12 +89,12 @@ endif()
 ament_export_include_directories(
   include
 )
-# ament_export_libraries(
-#   ${PROJECT_NAME}
-# )
-# ament_export_targets(
-#   export_${PROJECT_NAME}
-# )
+ament_export_libraries(
+  ${PROJECT_NAME}
+)
+ament_export_targets(
+  export_${PROJECT_NAME}
+)
 ament_export_dependencies(
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
