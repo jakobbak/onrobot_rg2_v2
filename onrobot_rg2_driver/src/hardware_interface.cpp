@@ -25,3 +25,42 @@
 // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
+
+#include "onrobot_rg2_driver/hardware_interface.hpp"
+
+namespace onrobot_rg2_driver
+{
+
+OnRobotRG2GripperHardwareInterface::OnRobotRG2GripperHardwareInterface()
+{
+}
+
+hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_init(const hardware_interface::HardwareInfo& info)
+{
+}
+
+std::vector<hardware_interface::StateInterface> OnRobotRG2GripperHardwareInterface::export_state_interfaces()
+{
+}
+
+std::vector<hardware_interface::CommandInterface> OnRobotRG2GripperHardwareInterface::export_command_interfaces()
+{
+}
+
+hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_activate(const rclcpp_lifecycle::State& previous_state)
+{
+}
+
+hardware_interface::CallbackReturn OnRobotRG2GripperHardwareInterface::on_deactivate(const rclcpp_lifecycle::State& previous_state)
+{
+}
+
+hardware_interface::return_type OnRobotRG2GripperHardwareInterface::read(const rclcpp::Time& time, const rclcpp::Duration& period)
+{
+}
+
+hardware_interface::return_type OnRobotRG2GripperHardwareInterface::write(const rclcpp::Time& time, const rclcpp::Duration& period)
+{
+}
+
+} // namespace onrobot_rg2_driver
